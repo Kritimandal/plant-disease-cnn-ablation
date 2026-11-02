@@ -1,0 +1,7 @@
+arm,description,best_epoch,d_macro_f1_vs_A0,disagreements,gen_gap,latency_ms,macro_f1,mcnemar_p_vs_A0,param_ratio_vs_A0,params,sec_per_epoch,size_mb,test_accuracy
+A0,original custom CNN,38,,,-0.0307,23.548,0.91117,,,3309542,34.0,37.924,0.92101
+A1,A0 + global average pooling head,35,-0.08156,959/275,-0.05507,19.443,0.82961,5.18e-89,0.0346,114662,34.0,1.362,0.84639
+A2,A1 + batch normalization,30,-0.04537,837/415,0.03278,26.205,0.8658,2.99e-33,0.0348,115334,34.1,1.389,0.87497
+A3,A2 + depthwise separable convolutions,34,-0.0733,953/401,0.03023,26.128,0.83787,3.92e-52,0.0104,34278,33.9,0.465,0.86079
+A4,A3 + inverted residual blocks,39,0.063,103/634,-0.00164,109.034,0.97417,4.19e-94,0.0876,289798,41.7,3.52,0.97894
+B0,MobileNetV2 transfer learning (reference),34,0.01829,471/581,0.00739,237.555,0.92946,7.70e-04,0.7333,2426854,34.8,10.903,0.93301
