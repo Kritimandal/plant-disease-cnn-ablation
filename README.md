@@ -4,7 +4,7 @@ An ablation study on plant leaf disease classification (38 classes) with TensorF
 
 A simple custom CNN is improved **one architectural change at a time**, using ideas from MobileNetV2, and each change is measured for accuracy and for cost (parameters, model size and CPU latency). A pretrained MobileNetV2 is trained under the same protocol as a reference.
 
-**Slides:** [docs/Seminar_Presentation.pdf](docs/Seminar_Presentation.pdf)
+**Slides:** [docs/Seminar_Presentation.pdf](docs/Seminar_Presentation.pdf) · **All report figures:** [docs/report-figures](docs/report-figures/README.md)
 
 ## Key findings
 
@@ -17,7 +17,7 @@ A simple custom CNN is improved **one architectural change at a time**, using id
 
 Each arm adds exactly one change to the arm before it, so the difference between neighbours measures that change.
 
-![Architectures A0–A4](docs/figures/fig2_architecture.png)
+![Architectures A0–A4](docs/report-figures/fig2_architecture.png)
 
 | Arm | Change | Parameters | Size (MB) | CPU latency (ms) | Test accuracy | Macro F1 |
 |---|---|---:|---:|---:|---:|---:|
@@ -30,11 +30,11 @@ Each arm adds exactly one change to the arm before it, so the difference between
 
 Every arm differs significantly from the A0 baseline (McNemar's exact test, p < 0.001).
 
-![Macro F1 by arm](docs/figures/fig3_macro_f1.png)
+![Macro F1 by arm](docs/report-figures/fig3_macro_f1.png)
 
-![Accuracy against parameters and model size](docs/figures/fig4_accuracy_vs_size.png)
+![Accuracy against parameters and model size](docs/report-figures/fig4_accuracy_vs_size.png)
 
-![Operations against CPU latency](docs/figures/fig5_flops_vs_latency.png)
+![Operations against CPU latency](docs/report-figures/fig5_flops_vs_latency.png)
 
 ## Leakage-free splits
 
@@ -62,7 +62,7 @@ At the source-photograph level the classes range from 152 to 2,527 images (16.6�
 - Seed 42 for Python, NumPy and TensorFlow
 - Trained on a Tesla T4 GPU (Kaggle); latency measured on a CPU (median of 100 runs after warm-up)
 
-![Validation accuracy by epoch](docs/figures/fig7_validation_curves.png)
+![Validation accuracy by epoch](docs/report-figures/fig7_validation_curves.png)
 
 ## Project structure
 
@@ -83,7 +83,7 @@ notebooks/
 └── run_ablation_colab.ipynb   self-contained GPU runner for Kaggle or Colab
 output/                    results of the 40-epoch run: per-arm metrics, histories,
                            test predictions and the summary table
-docs/                      presentation (PDF) and figures
+docs/                      presentation (PDF) and all report figures
 ```
 
 Trained weights are not included because of their size; they can be reproduced with the steps below.
