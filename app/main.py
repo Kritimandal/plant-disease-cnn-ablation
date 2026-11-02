@@ -66,7 +66,7 @@ st.markdown(
 
 if not runs:
     st.warning(
-        "No trained arms found in `results/`. Please execute the ablation sweep first — "
+        "No trained arms found in `results/`. Please execute the ablation sweep first: "
         "`notebooks/run_ablation_colab.ipynb` on a GPU runtime, or "
         "`python scripts/run_ablation.py` locally."
     )
@@ -84,7 +84,7 @@ selected = st.multiselect(
     "Arms to compare",
     options=sorted(runs),
     default=sorted(runs),
-    format_func=lambda a: f"{a} — {ARMS[a][0]}" if a in ARMS else a,
+    format_func=lambda a: f"{a}: {ARMS[a][0]}" if a in ARMS else a,
 )
 
 uploaded_file = st.file_uploader("Upload a plant leaf image (JPG/PNG)", type=["jpg", "jpeg", "png"])
